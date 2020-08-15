@@ -19,7 +19,7 @@ class ThemeServiceProvider extends ServiceProvider
     public function boot()
     {
         Nova::serving(function (ServingNova $event) {
-            if (App::isLocale('ar')) {
+            if (!App::isLocale('ar')) {
                 Nova::style('laravel-nova-theme-responsive', __DIR__ . '/../resources/css/theme.css');
                 Nova::script('laravel-nova-theme-responsive', __DIR__ . '/../resources/js/theme.js');
                 Nova::provideToScript([
